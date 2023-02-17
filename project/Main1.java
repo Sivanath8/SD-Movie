@@ -5,7 +5,21 @@ import java.sql.*;
 
 public class Main1
 {
-	  public  void display(Connection con)
+	public static Connection getConnection() 
+	{
+		try
+		{
+			Class.forName("com.mysql.jdbc.Driver");  
+		    Connection con =  DriverManager.getConnection("jdbc:mysql://localhost:3306/movie_siva","root","tiger");
+		    return con;
+		}
+		catch (Exception e)
+		{
+			System.out.println(e);
+		}
+		
+	}
+	  public  void display()
       {
     	  BookMovie bobj=new BookMovie();
     	  Register robj=new Register();
@@ -17,6 +31,7 @@ public class Main1
     	  System.out.println("3.See your Booking Details");
     	  System.out.println("---------------------------");
     	  System.out.println("Choose Your Page : ");
+    	  Connection con =getConnection();
     	  int option =in.nextInt();
     	  try 
     	  {
@@ -47,19 +62,20 @@ public class Main1
 		
 		long num = 0;
 		int num2=0;
-		try
-		{
-			OrderDetails oobj=new OrderDetails();
-		Class.forName("com.mysql.jdbc.Driver");  
-	    Connection con =  DriverManager.getConnection("jdbc:mysql://localhost:3306/movie_siva","root","tiger");
-	      obj.display(con);
-		//oobj.orders(con, num2, num);
-		//bobj.Movie_details(con, num);
-	   
-		}
-		catch (Exception e)
-		{
-			System.out.println(e);
-		}
+		obj.display();
+//		try
+//		{
+//			OrderDetails oobj=new OrderDetails();
+//		Class.forName("com.mysql.jdbc.Driver");  
+//	    Connection con =  DriverManager.getConnection("jdbc:mysql://localhost:3306/movie_siva","root","tiger");
+//	      obj.display(con);
+//		//oobj.orders(con, num2, num);
+//		//bobj.Movie_details(con, num);
+//	   
+//		}
+//		catch (Exception e)
+//		{
+//			System.out.println(e);
+//		}
 	}
 }
