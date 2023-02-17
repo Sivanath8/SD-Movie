@@ -11,7 +11,7 @@ public class Main1
     	  Register robj=new Register();
   		OrderDetails oobj=new OrderDetails();
     	  Scanner in=new Scanner(System.in);  
-    	  System.out.println(" WELCOME TO BIGG BOSS MOVIE");
+//    	  System.out.println(" WELCOME TO BIGG BOSS MOVIE");
     	  System.out.println("1.Book Your Movie");
     	  System.out.println("2.Register your Id");
     	  System.out.println("3.See your Booking Details");
